@@ -1,0 +1,16 @@
+{
+  "name": "bun-node",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsx": "4.7.0"
+  },
+  "scripts": {
+    "dev:bun": "bun src/index.ts",
+    "dev:node": "tsx --tsconfig ./tsconfig.node.json src/index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
