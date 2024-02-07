@@ -1,10 +1,14 @@
 import * as fs from "fs";
-import type { TestFileReader } from "../src/Runtime";
+import type { Runtime } from "../src/Runtime";
 
-export class NodeFileReader implements TestFileReader {
-  readFile(): Promise<string> {
-    return fs.promises
-      .readFile("foo.txt", "utf-8")
-      .then((text) => text + " from node!");
-  }
+export const NodeRuntime = {
+  fs: {
+    readFile,
+  },
+};
+
+function readFile(): Promise<string> {
+  return fs.promises
+    .readFile("foo.txt", "utf-8")
+    .then((text) => text + " from node!");
 }

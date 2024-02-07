@@ -1,5 +1,5 @@
-import { TestFileReader } from "./Runtime";
+import { runtime } from "./Runtime";
 
-TestFileReader()
-  .then((fileReader) => fileReader.readFile())
+runtime()
+  .then((runtime) => runtime.fs.readFile())
   .then((text: string) => console.log(text));
