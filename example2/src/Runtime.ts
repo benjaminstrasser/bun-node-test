@@ -8,6 +8,8 @@ export async function runtime() {
   let runtime: Runtime | null = null;
   if (typeof Bun !== "undefined") {
     await import("../bun").then((module) => (runtime = module.BunRuntime));
+  } else if (typeof Deno !== "undefined") {
+    await import("../deno").then((module) => (runtime = module.DenoRuntime));
   } else if (
     typeof process !== "undefined" &&
     process.versions &&

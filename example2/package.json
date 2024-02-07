@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev:bun": "bun run ./src/index.ts",
-    "dev:node": "tsx ./src/index.ts"
+    "dev:node": "tsx ./src/index.ts",
+    "dev:deno": "deno run --unstable-sloppy-imports ./src/index.ts"
   }
 }
